@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --clr-bg: #010816;
+    --clr-text: rgb(235, 235, 152);
+
+    --font-family: 'Inter';
+
+    --vw-scale: 4vw;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--clr-bg);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: clamp(1rem, 20px, 4rem);
+
+    min-height: 100svh;
+
+    background: linear-gradient(hsl(from var(--clr-bg) h s l/0.95),
+            hsl(from var(--clr-bg) h s l/0.95), hsl(from var(--clr-bg) h s l/0.95)),
+        url(./assets/images/BettyNwoksPrize2025.png);
+
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: var(--clr-text);
+
+    font-family: var(--font-family);
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+
+    background: linear-gradient(to right,
+            #aa771c 0%,
+            #f1eb9e 100%);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+
+.countdown-container {
+    font-weight: 700;
+    padding: clamp(0.75rem, calc(var(--vw-scale) * 0.5), 1.5rem) clamp(1rem, calc(var(--vw-scale) * 1), 3rem);
+    background-color: hsl(from var(--clr-bg) h s l /0.95);
+    border-radius: 1rem;
+    color: rgb(50, 248, 215);
+    border: 1px solid var(--clr-text);
+
+    width: clamp(360px, calc(var(--vw-scale) * 15), 800px);
+
+}
+
+#countdown-el {
+    background: linear-gradient(135deg,
+            #ffd700 0%,
+            rgb(50, 248, 215) 100%);
+
+    /* Clip the gradient to the text shape */
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    text-align: center;
+
+    font-size: clamp(1.8rem, var(--vw-scale), 4rem);
+    letter-spacing: -0.02em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+
+.registration {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    color: rgb(219, 213, 194);
+    text-decoration-color: rgb(219, 213, 194);
+    text-align: center;
+    font-weight: 200;
+}
