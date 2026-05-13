@@ -1,5 +1,7 @@
-const theDays = 71;
-let timeRemaining = theDays * 86400;
+// const theDays = 71;
+// let timeRemaining = theDays * 86400;
+
+const targetDate = new Date("July 24, 2026 00:00:00").getTime();
 
 function startCountDown() {
     // 1. DOM Creation: Create and inject elements instantly
@@ -25,15 +27,19 @@ function startCountDown() {
 
     // 2. REUSABLE FUNCTION: Performs time math and updates text
     function updateDisplay() {
+
+        const now = new Date().getTime();
+        const timeRemaining = targetDate - now; // Difference in milliseconds
+
         if (timeRemaining <= 0) {
             countDownEl.textContent = "00d : 00h : 00m : 00s";
             return false; // Tells loop to stop
         }
 
-        let secs = timeRemaining % 60;
-        let min = Math.floor(timeRemaining / 60) % 60;
-        let hour = Math.floor(timeRemaining / 3600) % 24;
-        let days = Math.floor(timeRemaining / 86400);
+        let secs = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        let min = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        let hour = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
 
         let padD = String(days).padStart(2, '0');
         let padH = String(hour).padStart(2, '0');
@@ -44,21 +50,19 @@ function startCountDown() {
         return true; // Keeps loop running
     }
 
-    // 3. INSTANT EXECUTION: Populates the text before the user sees a blank container
-    updateDisplay();
-    timeRemaining--;
 
-    // 4. TIMER LOOP: Runs every 1 second moving forward
-    const timerInterval = setInterval(() => {
-        const isRunning = updateDisplay();
+    // Run instantly on load to remove the blank container flash
+    const isStillRunning = updateDisplay();
 
-        if (!isRunning) {
-            clearInterval(timerInterval);
-            return;
-        }
-
-        timeRemaining--;
-    }, 1000);
+    // Loop every 1 second moving forward
+    if (isStillRunning) {
+        const timerInterval = setInterval(() => {
+            const isRunning = updateDisplay();
+            if (!isRunning) {
+                clearInterval(timerInterval);
+            }
+        }, 1000);
+    }
 }
 
 // Execute the loop
