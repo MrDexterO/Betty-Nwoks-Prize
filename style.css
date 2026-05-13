@@ -31,7 +31,7 @@ body {
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    padding: clamp(1rem, 20px, 4rem);
+    padding: clamp(0.5rem, 20px, 4rem);
 
     min-height: 100svh;
 
@@ -68,7 +68,7 @@ h1 {
 
 .countdown-container {
     font-weight: 700;
-    padding: clamp(0.75rem, calc(var(--vw-scale) * 0.5), 1.5rem) clamp(1rem, calc(var(--vw-scale) * 1), 3rem);
+    padding: clamp(0.75rem, calc(var(--vw-scale) * 0.5), 1.5rem) clamp(0.75rem, calc(var(--vw-scale) * 1), 3rem);
     background-color: hsl(from var(--clr-bg) h s l /0.95);
     border-radius: 1rem;
     color: rgb(50, 248, 215);
