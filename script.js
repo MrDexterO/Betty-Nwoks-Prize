@@ -1,7 +1,7 @@
 // const theDays = 71;
 // let timeRemaining = theDays * 86400;
 
-const targetDate = new Date("July 24, 2026 00:00:00").getTime();
+const targetDate = new Date("July 23, 2026 00:00:00").getTime();
 
 function startCountDown() {
     // 1. DOM Creation: Create and inject elements instantly
