@@ -6,7 +6,7 @@
 
     --font-family: 'Inter';
 
-    --vw-scale: 4vw;
+    --vw-scale: 5vw;
 }
 
 
@@ -68,7 +68,7 @@ h1 {
 
 .countdown-container {
     font-weight: 700;
-    padding: clamp(0.75rem, calc(var(--vw-scale) * 0.5), 1.5rem) clamp(0.75rem, calc(var(--vw-scale) * 1), 3rem);
+    padding: clamp(0.75rem, calc(var(--vw-scale) * 0.5), 1.5rem) clamp(0.75rem, calc(var(--vw-scale) * 1), 2rem);
     background-color: hsl(from var(--clr-bg) h s l /0.95);
     border-radius: 1rem;
     color: rgb(50, 248, 215);
